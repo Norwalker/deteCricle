@@ -16,9 +16,9 @@ def circle(j):
     contours, hierarchy = cv.findContours(imgdIlate, cv.RETR_TREE, cv.CHAIN_APPROX_NONE)
     # 轮廓数量为3 且符合x标准 且两个轮廓的坐标点数量的差值小于某个数量则为封闭曲线
     if len(contours)==2 and (hierarchy  == x).all() and abs(len(contours[1])-len(contours[0]))<55 :
-        print(j+"         有缘")
+        print(j+"         有圆")
     else:
-        print(j+"无缘")
+        print(j+"无圆")
     cv.drawContours(imgdIlate,contours,-1,(0,255,0),2)
     cv.imshow(j, imgdIlate)
     cv.waitKey(0)
